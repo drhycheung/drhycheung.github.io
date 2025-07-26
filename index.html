@@ -4,76 +4,215 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dr. Cheung, Ho Yin - Professional Profile</title>
-    <style>
-        body {
-            font-family: sans-serif;
-            line-height: 1.6;
-            margin: 20px;
-        }
-        h1, h2 {
-            color: #333;
-        }
-        .section {
-            margin-bottom: 2em;
-        }
-        .highlight {
-            font-weight: bold;
-            color: #007bff;
-        }
-        .block {
-            background-color: #f9f9f9;
-            padding: 15px;
-            border-radius: 5px;
-            margin-bottom: 1em;
-        }
-        .contact {
-            font-style: italic;
-            margin-top: 2em;
-        }
-
-        @media (max-width: 768px) {
-            body {
-                margin: 10px;
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#007bff',
+                        secondary: '#333333',
+                        accent: '#f9f9f9',
+                        highlight: '#007bff',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
             }
-            .block {
-                padding: 10px;
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .text-shadow {
+                text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+            .transition-custom {
+                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            }
+            .hover-scale {
+                transition: transform 0.3s ease;
+            }
+            .hover-scale:hover {
+                transform: translateY(-2px);
             }
         }
     </style>
 </head>
-<body>
-    <h1>Dr. Cheung, Ho Yin (BSc, MPhil, EdD)</h1>
-    <h2>Professional Profile</h2>
+<body class="bg-gray-50 text-gray-800 font-sans">
+    <!-- 导航栏 -->
+    <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-sm shadow-sm transition-all duration-300">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <i class="fa fa-graduation-cap text-primary text-2xl"></i>
+                <span class="font-bold text-xl text-secondary">Dr. Cheung's Profile</span>
+            </div>
+            <div class="hidden md:flex space-x-8">
+                <a href="index.html" class="text-primary font-medium hover:text-primary/80 transition-custom">Home</a>
+                <a href="TeachingPhilosophy.html" class="text-secondary font-medium hover:text-primary transition-custom">Teaching Philosophy</a>
+            </div>
+            <button class="md:hidden text-secondary text-xl">
+                <i class="fa fa-bars"></i>
+            </button>
+        </div>
+    </nav>
 
-    <div class="section">
-        <div class="block">
-            <p>I am an educational researcher and practitioner with a passion for blending traditional teaching methods with innovative approaches, especially in the context of <span class="highlight">technology-enhanced learning</span>. My academic journey has taken me from studying theoretical and computational physics at HKUST to pursuing an Ed.D. at the University of Bristol, where I specialized in flipped classroom models. Since 2022, I have been teaching at The Education University of Hong Kong (EdUHK), where I teach courses in AI and general education.</p>
+    <!-- 移动端菜单 -->
+    <div class="md:hidden bg-white shadow-lg absolute w-full left-0 top-16 transform -translate-y-full opacity-0 transition-all duration-300 pointer-events-none" id="mobile-menu">
+        <div class="container mx-auto px-4 py-3 flex flex-col space-y-4">
+            <a href="index.html" class="text-primary font-medium py-2 border-b border-gray-100">Home</a>
+            <a href="TeachingPhilosophy.html" class="text-secondary font-medium py-2">Teaching Philosophy</a>
         </div>
     </div>
 
-    <div class="section">
-        <div class="block">
-            <p>Before joining EdUHK, I had the privilege of teaching in higher education since 2004, covering areas such as physical science, information technology, statistics, and research methods. Throughout my career, I have always believed that effective learning comes from a thoughtful balance between structured lectures and active, student-centered activities—especially when supported by technology. I try to bring this philosophy into every class I teach, whether it's about AI, coding, or general education.</p>
+    <!-- 英雄区域 -->
+    <header class="relative bg-gradient-to-r from-primary/90 to-primary text-white py-16 md:py-24 overflow-hidden">
+        <div class="absolute inset-0 bg-[url('https://picsum.photos/id/180/1200/800')] bg-cover bg-center opacity-10"></div>
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="max-w-4xl mx-auto text-center">
+                <h1 class="text-[clamp(2rem,5vw,3.5rem)] font-bold mb-4 text-shadow">Dr. Cheung, Ho Yin</h1>
+                <p class="text-[clamp(1.2rem,3vw,1.5rem)] mb-6 opacity-90">Educational Researcher & Practitioner</p>
+                <div class="flex justify-center space-x-4">
+                    <a href="TeachingPhilosophy.html" class="bg-white text-primary font-medium px-6 py-3 rounded-full hover:bg-gray-100 transition-custom shadow-lg hover-scale">
+                        <i class="fa fa-book mr-2"></i>Teaching Philosophy
+                    </a>
+                </div>
+            </div>
         </div>
-    </div>
+        <div class="absolute bottom-0 left-0 w-full h-12 bg-gradient-to-t from-gray-50 to-transparent"></div>
+    </header>
 
-    <div class="section">
-        <div class="block">
-            <p>I also enjoy engaging in educational research, particularly in areas like flipped learning, blended learning, coding education, and STEM education. I find it rewarding to explore how technology can be used to support learning and to think about the best ways to design and implement educational strategies that are both effective and inclusive.</p>
+    <main class="container mx-auto px-4 py-12">
+        <div class="max-w-4xl mx-auto">
+            <!-- 简介部分 -->
+            <section class="mb-12 bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl">
+                <div class="p-6 md:p-8">
+                    <h2 class="text-[clamp(1.5rem,3vw,2rem)] font-bold text-secondary mb-6 border-b border-gray-100 pb-4">
+                        <i class="fa fa-user-circle text-primary mr-3"></i>Professional Profile
+                    </h2>
+                    <div class="space-y-6">
+                        <div class="prose max-w-none">
+                            <p class="text-lg">I am an educational researcher and practitioner with a passion for blending traditional teaching methods with innovative approaches, especially in the context of <span class="text-highlight font-semibold">technology-enhanced learning</span>. My academic journey has taken me from studying theoretical and computational physics at HKUST to pursuing an Ed.D. at the University of Bristol, where I specialized in flipped classroom models. Since 2022, I have been teaching at The Education University of Hong Kong (EdUHK), where I teach courses in AI and general education.</p>
+                        </div>
+                        
+                        <div class="prose max-w-none">
+                            <p>Before joining EdUHK, I had the privilege of teaching in higher education since 2004, covering areas such as physical science, information technology, statistics, and research methods. Throughout my career, I have always believed that effective learning comes from a thoughtful balance between structured lectures and active, student-centered activities—especially when supported by technology. I try to bring this philosophy into every class I teach, whether it's about AI, coding, or general education.</p>
+                        </div>
+                        
+                        <div class="prose max-w-none">
+                            <p>I also enjoy engaging in educational research, particularly in areas like flipped learning, blended learning, coding education, and STEM education. I find it rewarding to explore how technology can be used to support learning and to think about the best ways to design and implement educational strategies that are both effective and inclusive.</p>
+                        </div>
+                        
+                        <div class="prose max-w-none">
+                            <p>In my teaching, I aim to be approachable, supportive, and encouraging. I believe that teachers should not only impart knowledge but also inspire curiosity and help students develop critical thinking and problem-solving skills. I try to make my classes engaging through discussions, hands-on projects, and the use of AI tools to enhance learning. For example, I’ve used AI chatbots to support students with writing tasks and curated resources to help them better understand AI tools.</p>
+                        </div>
+                        
+                        <div class="prose max-w-none">
+                            <p>I am grateful for the opportunity to work with students and colleagues who are passionate about learning and innovation. I hope to continue growing as an educator and researcher, always striving to improve my practice and contribute positively to the field of education.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 教学理念预览 -->
+            <section class="mb-12 bg-gradient-to-r from-primary/10 to-secondary/10 rounded-2xl p-6 md:p-8 shadow-md transition-all duration-300 hover:shadow-lg">
+                <h2 class="text-[clamp(1.3rem,2.5vw,1.75rem)] font-bold text-secondary mb-4">
+                    <i class="fa fa-lightbulb-o text-primary mr-3"></i>Teaching Philosophy
+                </h2>
+                <p class="text-gray-700 mb-6">Explore my educational philosophy and approach to teaching in depth.</p>
+                <a href="TeachingPhilosophy.html" class="inline-flex items-center text-primary font-medium hover:text-primary/80 transition-custom">
+                    <span>Read more about my teaching philosophy</span>
+                    <i class="fa fa-arrow-right ml-2"></i>
+                </a>
+            </section>
+
+            <!-- 联系信息 -->
+            <section class="mb-12 bg-white rounded-2xl shadow-lg p-6 md:p-8">
+                <h2 class="text-[clamp(1.3rem,2.5vw,1.75rem)] font-bold text-secondary mb-6 border-b border-gray-100 pb-4">
+                    <i class="fa fa-envelope text-primary mr-3"></i>Contact Information
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="flex items-start">
+                        <div class="bg-primary/10 p-3 rounded-full mr-4">
+                            <i class="fa fa-university text-primary"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-gray-800">Affiliation</h3>
+                            <p class="text-gray-600">The Education University of Hong Kong (EdUHK)</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="bg-primary/10 p-3 rounded-full mr-4">
+                            <i class="fa fa-envelope text-primary"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-gray-800">Email</h3>
+                            <p class="text-gray-600">hoyin.cheung@eduhk.hk</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
-    </div>
+    </main>
 
-    <div class="section">
-        <div class="block">
-            <p>In my teaching, I aim to be approachable, supportive, and encouraging. I believe that teachers should not only impart knowledge but also inspire curiosity and help students develop critical thinking and problem-solving skills. I try to make my classes engaging through discussions, hands-on projects, and the use of AI tools to enhance learning. For example, I’ve used AI chatbots to support students with writing tasks and curated resources to help them better understand AI tools.</p>
+    <!-- 页脚 -->
+    <footer class="bg-secondary text-white py-10">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-xl font-bold mb-4">Dr. Cheung, Ho Yin</h3>
+                        <p class="text-gray-300 mb-4">Educational Researcher & Practitioner</p>
+                        <p class="text-gray-400">The Education University of Hong Kong</p>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                        <ul class="space-y-2">
+                            <li><a href="index.html" class="text-gray-300 hover:text-white transition-custom">Home</a></li>
+                            <li><a href="TeachingPhilosophy.html" class="text-gray-300 hover:text-white transition-custom">Teaching Philosophy</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                    <p>&copy; 2025 Dr. Cheung, Ho Yin. All rights reserved.</p>
+                </div>
+            </div>
         </div>
-    </div>
+    </footer>
 
-    <div class="section">
-        <div class="block">
-            <p>I am grateful for the opportunity to work with students and colleagues who are passionate about learning and innovation. I hope to continue growing as an educator and researcher, always striving to improve my practice and contribute positively to the field of education.</p>
-        </div>
-    </div>
-
+    <script>
+        // 移动端菜单切换
+        const menuToggle = document.querySelector('.fa-bars').parentElement;
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuToggle.addEventListener('click', () => {
+            if (mobileMenu.classList.contains('-translate-y-full')) {
+                mobileMenu.classList.remove('-translate-y-full', 'opacity-0', 'pointer-events-none');
+                mobileMenu.classList.add('translate-y-0', 'opacity-100', 'pointer-events-auto');
+                menuToggle.innerHTML = '<i class="fa fa-times"></i>';
+            } else {
+                mobileMenu.classList.add('-translate-y-full', 'opacity-0', 'pointer-events-none');
+                mobileMenu.classList.remove('translate-y-0', 'opacity-100', 'pointer-events-auto');
+                menuToggle.innerHTML = '<i class="fa fa-bars"></i>';
+            }
+        });
+        
+        // 导航栏滚动效果
+        const nav = document.querySelector('nav');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                nav.classList.add('py-2', 'shadow-md');
+                nav.classList.remove('py-3', 'shadow-sm');
+            } else {
+                nav.classList.add('py-3', 'shadow-sm');
+                nav.classList.remove('py-2', 'shadow-md');
+            }
+        });
+    </script>
 </body>
 </html>
+    
