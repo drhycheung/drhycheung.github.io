@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. Cheung, Ho Yin - Professional Profile</title>
+    <title>Dr. Cheung, Ho Yin - Professional Profile & Teaching Philosophy</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <script>
@@ -40,6 +40,11 @@
             .hover-scale:hover {
                 transform: translateY(-2px);
             }
+            .blockquote {
+                position: relative;
+                padding-left: 1.5rem;
+                border-left: 4px solid theme('colors.primary');
+            }
         }
     </style>
 </head>
@@ -52,10 +57,11 @@
                 <span class="font-bold text-xl text-secondary">Dr. Cheung's Profile</span>
             </div>
             <div class="hidden md:flex space-x-8">
-                <a href="index.html" class="text-primary font-medium hover:text-primary/80 transition-custom">Home</a>
-                <a href="TeachingPhilosophy.html" class="text-secondary font-medium hover:text-primary transition-custom">Teaching Philosophy</a>
+                <a href="#profile" class="text-primary font-medium hover:text-primary/80 transition-custom">Professional Profile</a>
+                <a href="#philosophy" class="text-secondary font-medium hover:text-primary transition-custom">Teaching Philosophy</a>
+                <a href="#pedagogical" class="text-secondary font-medium hover:text-primary transition-custom">Pedagogical Design</a>
             </div>
-            <button class="md:hidden text-secondary text-xl">
+            <button class="md:hidden text-secondary text-xl" id="menu-toggle">
                 <i class="fa fa-bars"></i>
             </button>
         </div>
@@ -64,8 +70,9 @@
     <!-- 移动端菜单 -->
     <div class="md:hidden bg-white shadow-lg absolute w-full left-0 top-16 transform -translate-y-full opacity-0 transition-all duration-300 pointer-events-none" id="mobile-menu">
         <div class="container mx-auto px-4 py-3 flex flex-col space-y-4">
-            <a href="index.html" class="text-primary font-medium py-2 border-b border-gray-100">Home</a>
-            <a href="TeachingPhilosophy.html" class="text-secondary font-medium py-2">Teaching Philosophy</a>
+            <a href="#profile" class="text-primary font-medium py-2 border-b border-gray-100">Professional Profile</a>
+            <a href="#philosophy" class="text-secondary font-medium py-2">Teaching Philosophy</a>
+            <a href="#pedagogical" class="text-secondary font-medium py-2">Pedagogical Design</a>
         </div>
     </div>
 
@@ -76,9 +83,16 @@
             <div class="max-w-4xl mx-auto text-center">
                 <h1 class="text-[clamp(2rem,5vw,3.5rem)] font-bold mb-4 text-shadow">Dr. Cheung, Ho Yin</h1>
                 <p class="text-[clamp(1.2rem,3vw,1.5rem)] mb-6 opacity-90">Educational Researcher & Practitioner</p>
-                <div class="flex justify-center space-x-4">
-                    <a href="TeachingPhilosophy.html" class="bg-white text-primary font-medium px-6 py-3 rounded-full hover:bg-gray-100 transition-custom shadow-lg hover-scale">
+                <p class="text-[clamp(1rem,2vw,1.25rem)] mb-8 opacity-80">Programme Leader of BSc(AI&EdTech) at The Education University of Hong Kong</p>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="#profile" class="bg-white text-primary font-medium px-6 py-3 rounded-full hover:bg-gray-100 transition-custom shadow-lg hover-scale">
+                        <i class="fa fa-user mr-2"></i>Professional Profile
+                    </a>
+                    <a href="#philosophy" class="bg-transparent border-2 border-white text-white font-medium px-6 py-3 rounded-full hover:bg-white/10 transition-custom shadow-lg hover-scale">
                         <i class="fa fa-book mr-2"></i>Teaching Philosophy
+                    </a>
+                    <a href="https://www.linkedin.com/in/haoran/" target="_blank" class="bg-white/10 text-white font-medium px-6 py-3 rounded-full hover:bg-white/20 transition-custom shadow-lg hover-scale">
+                        <i class="fa fa-linkedin mr-2"></i>LinkedIn Profile
                     </a>
                 </div>
             </div>
@@ -88,70 +102,249 @@
 
     <main class="container mx-auto px-4 py-12">
         <div class="max-w-4xl mx-auto">
-            <!-- 简介部分 -->
-            <section class="mb-12 bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl">
-                <div class="p-6 md:p-8">
-                    <h2 class="text-[clamp(1.5rem,3vw,2rem)] font-bold text-secondary mb-6 border-b border-gray-100 pb-4">
-                        <i class="fa fa-user-circle text-primary mr-3"></i>Professional Profile
-                    </h2>
+            <!-- 专业简介部分 -->
+            <section id="profile" class="mb-16 scroll-mt-24">
+                <div class="flex items-center mb-8">
+                    <div class="bg-primary/10 p-3 rounded-full mr-4">
+                        <i class="fa fa-user-circle text-primary text-2xl"></i>
+                    </div>
+                    <h2 class="text-[clamp(1.5rem,3vw,2rem)] font-bold text-secondary">Professional Profile</h2>
+                </div>
+                
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl p-6 md:p-8">
                     <div class="space-y-6">
-                        <div class="prose max-w-none">
-                            <p class="text-lg">I am an educational researcher and practitioner with a passion for blending traditional teaching methods with innovative approaches, especially in the context of <span class="text-highlight font-semibold">technology-enhanced learning</span>. My academic journey has taken me from studying theoretical and computational physics at HKUST to pursuing an Ed.D. at the University of Bristol, where I specialized in flipped classroom models. Since 2022, I have been teaching at The Education University of Hong Kong (EdUHK), where I teach courses in AI and general education.</p>
-                        </div>
+                        <p class="text-lg leading-relaxed">
+                            I am an educational researcher and practitioner with a passion for blending traditional teaching methods with innovative approaches, especially in the context of <span class="text-highlight font-semibold">technology-enhanced learning</span>. My academic journey has taken me from studying theoretical and computational physics at HKUST to pursuing an Ed.D. at the University of Bristol, where I specialized in flipped classroom models. Since 2022, I have been teaching at The Education University of Hong Kong (EdUHK), where I serve as the <span class="text-highlight font-semibold">Programme Leader of BSc(AI&EdTech)</span> and teach courses in AI and general education.
+                        </p>
                         
-                        <div class="prose max-w-none">
-                            <p>Before joining EdUHK, I had the privilege of teaching in higher education since 2004, covering areas such as physical science, information technology, statistics, and research methods. Throughout my career, I have always believed that effective learning comes from a thoughtful balance between structured lectures and active, student-centered activities—especially when supported by technology. I try to bring this philosophy into every class I teach, whether it's about AI, coding, or general education.</p>
-                        </div>
+                        <p class="text-lg leading-relaxed">
+                            Before joining EdUHK, I had the privilege of teaching in higher education since 2004, covering areas such as physical science, information technology, statistics, and research methods. Throughout my career, I have always believed that effective learning comes from a thoughtful balance between structured lectures and active, student-centered activities—especially when supported by technology. I try to bring this philosophy into every class I teach, whether it's about AI, coding, or general education.
+                        </p>
                         
-                        <div class="prose max-w-none">
-                            <p>I also enjoy engaging in educational research, particularly in areas like flipped learning, blended learning, coding education, and STEM education. I find it rewarding to explore how technology can be used to support learning and to think about the best ways to design and implement educational strategies that are both effective and inclusive.</p>
-                        </div>
+                        <p class="text-lg leading-relaxed">
+                            I also enjoy engaging in educational research, particularly in areas like flipped learning, blended learning, coding education, and STEM education. I find it rewarding to explore how technology can be used to support learning and to think about the best ways to design and implement educational strategies that are both effective and inclusive.
+                        </p>
                         
-                        <div class="prose max-w-none">
-                            <p>In my teaching, I aim to be approachable, supportive, and encouraging. I believe that teachers should not only impart knowledge but also inspire curiosity and help students develop critical thinking and problem-solving skills. I try to make my classes engaging through discussions, hands-on projects, and the use of AI tools to enhance learning. For example, I’ve used AI chatbots to support students with writing tasks and curated resources to help them better understand AI tools.</p>
-                        </div>
+                        <p class="text-lg leading-relaxed">
+                            In my teaching, I aim to be approachable, supportive, and encouraging. I believe that teachers should not only impart knowledge but also inspire curiosity and help students develop critical thinking and problem-solving skills. I try to make my classes engaging through discussions, hands-on projects, and the use of AI tools to enhance learning. For example, I’ve used AI chatbots to support students with writing tasks and curated resources to help them better understand AI tools.
+                        </p>
                         
-                        <div class="prose max-w-none">
-                            <p>I am grateful for the opportunity to work with students and colleagues who are passionate about learning and innovation. I hope to continue growing as an educator and researcher, always striving to improve my practice and contribute positively to the field of education.</p>
+                        <p class="text-lg leading-relaxed">
+                            I am grateful for the opportunity to work with students and colleagues who are passionate about learning and innovation. I hope to continue growing as an educator and researcher, always striving to improve my practice and contribute positively to the field of education.
+                        </p>
+                        
+                        <div class="mt-8 pt-6 border-t border-gray-100">
+                            <div class="flex flex-wrap gap-4">
+                                <a href="https://www.linkedin.com/in/haoran/" target="_blank" class="inline-flex items-center bg-primary/10 text-primary px-4 py-2 rounded-lg hover:bg-primary/20 transition-custom">
+                                    <i class="fa fa-linkedin mr-2"></i>Connect on LinkedIn
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- 教学理念预览 -->
-            <section class="mb-12 bg-gradient-to-r from-primary/10 to-secondary/10 rounded-2xl p-6 md:p-8 shadow-md transition-all duration-300 hover:shadow-lg">
-                <h2 class="text-[clamp(1.3rem,2.5vw,1.75rem)] font-bold text-secondary mb-4">
-                    <i class="fa fa-lightbulb-o text-primary mr-3"></i>Teaching Philosophy
-                </h2>
-                <p class="text-gray-700 mb-6">Explore my educational philosophy and approach to teaching in depth.</p>
-                <a href="TeachingPhilosophy.html" class="inline-flex items-center text-primary font-medium hover:text-primary/80 transition-custom">
-                    <span>Read more about my teaching philosophy</span>
-                    <i class="fa fa-arrow-right ml-2"></i>
-                </a>
+            <!-- 教学理念部分 -->
+            <section id="philosophy" class="mb-16 scroll-mt-24">
+                <div class="flex items-center mb-8">
+                    <div class="bg-primary/10 p-3 rounded-full mr-4">
+                        <i class="fa fa-lightbulb-o text-primary text-2xl"></i>
+                    </div>
+                    <h2 class="text-[clamp(1.5rem,3vw,2rem)] font-bold text-secondary">Teaching Philosophy</h2>
+                </div>
+                
+                <div class="space-y-8">
+                    <!-- 建构主义方法 -->
+                    <article class="bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl">
+                        <div class="bg-primary/10 p-4 md:p-6">
+                            <h3 class="text-[clamp(1.3rem,2.5vw,1.75rem)] font-bold text-secondary flex items-center">
+                                <i class="fa fa-lightbulb-o text-primary mr-3"></i>Constructivist Approach
+                            </h3>
+                        </div>
+                        <div class="p-6 md:p-8">
+                            <p class="text-lg leading-relaxed">
+                                My teaching philosophy is rooted in a <span class="text-highlight font-semibold">constructivist approach</span> that emphasizes <span class="text-highlight font-semibold">active learning, student-centered engagement, and the development of critical thinking skills</span>. I believe that knowledge is not passively received but <span class="text-highlight font-semibold">actively constructed</span> through interaction, exploration, and reflection. This aligns with the principles of both cognitive and social constructivism, where students are encouraged to engage in meaningful learning experiences that foster deeper understanding and personal meaning-making.
+                            </p>
+                        </div>
+                    </article>
+
+                    <!-- 包容性和参与性课堂 -->
+                    <article class="bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl">
+                        <div class="bg-primary/10 p-4 md:p-6">
+                            <h3 class="text-[clamp(1.3rem,2.5vw,1.75rem)] font-bold text-secondary flex items-center">
+                                <i class="fa fa-users text-primary mr-3"></i>Inclusive and Engaging Classroom
+                            </h3>
+                        </div>
+                        <div class="p-6 md:p-8">
+                            <p class="text-lg leading-relaxed">
+                                In my classroom, I strive to create an <span class="text-highlight font-semibold">inclusive and supportive environment</span> where students feel safe to express their ideas and explore diverse perspectives. I incorporate a variety of teaching strategies, including group discussions, problem-solving activities, and real-world applications, to keep students engaged and motivated. I also utilize technology and multimedia resources to enhance learning and provide opportunities for students to engage with emerging technologies such as the metaverse, which can enrich their educational experience.
+                            </p>
+                        </div>
+                    </article>
+
+                    <!-- 真实性评估 -->
+                    <article class="bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl">
+                        <div class="bg-primary/10 p-4 md:p-6">
+                            <h3 class="text-[clamp(1.3rem,2.5vw,1.75rem)] font-bold text-secondary flex items-center">
+                                <i class="fa fa-check-circle text-primary mr-3"></i>Authentic Assessment
+                            </h3>
+                        </div>
+                        <div class="p-6 md:p-8">
+                            <p class="text-lg leading-relaxed">
+                                Assessment in my teaching philosophy is not limited to traditional exams or grades. Instead, I focus on evaluating students' ability to think critically, collaborate effectively, and demonstrate their understanding through various forms of assessment, such as portfolios, projects, and self-reflection. I believe that fostering <span class="text-highlight font-semibold">intrinsic motivation and a sense of autonomy</span> is essential for students to take ownership of their learning journey.
+                            </p>
+                        </div>
+                    </article>
+
+                    <!-- 终身学习 -->
+                    <article class="bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl">
+                        <div class="bg-primary/10 p-4 md:p-6">
+                            <h3 class="text-[clamp(1.3rem,2.5vw,1.75rem)] font-bold text-secondary flex items-center">
+                                <i class="fa fa-book text-primary mr-3"></i>Lifelong Learning
+                            </h3>
+                        </div>
+                        <div class="p-6 md:p-8">
+                            <p class="text-lg leading-relaxed">
+                                Overall, my teaching philosophy is guided by the belief that education is a <span class="text-highlight font-semibold">continuous and dynamic process</span> that extends beyond the classroom. It is about empowering students to become <span class="text-highlight font-semibold">independent, curious, and lifelong learners</span> who can adapt to the ever-changing world.
+                            </p>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- 教学名言 -->
+                <div class="mt-10 bg-gradient-to-r from-primary/5 to-secondary/5 rounded-2xl p-6 md:p-8 shadow-md transition-all duration-300 hover:shadow-lg">
+                    <div class="flex items-start">
+                        <div class="text-primary text-5xl mr-4 mt-2">
+                            <i class="fa fa-quote-left"></i>
+                        </div>
+                        <div class="blockquote">
+                            <p class="text-xl italic text-gray-700 mb-4">"The art of teaching is the art of assisting discovery."</p>
+                            <p class="text-primary font-medium">- Mark Van Doren</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 教学设计原则部分 -->
+            <section id="pedagogical" class="mb-16 scroll-mt-24">
+                <div class="flex items-center mb-8">
+                    <div class="bg-primary/10 p-3 rounded-full mr-4">
+                        <i class="fa fa-graduation-cap text-primary text-2xl"></i>
+                    </div>
+                    <h2 class="text-[clamp(1.5rem,3vw,2rem)] font-bold text-secondary">Pedagogical Design Principles</h2>
+                </div>
+                
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl p-6 md:p-8">
+                    <p class="text-lg leading-relaxed mb-8">
+                        In my pedagogical design, I integrate <span class="text-highlight font-semibold">constructive alignment</span> and <span class="text-highlight font-semibold">outcomes-based principles</span> to ensure that learning objectives, teaching activities, and assessments are consistently aligned, which enhances student engagement and learning outcomes. Here's how I apply these principles:
+                    </p>
+                    
+                    <div class="space-y-6">
+                        <!-- 原则1 -->
+                        <div class="bg-gray-50 p-5 rounded-xl border-l-4 border-primary">
+                            <div class="flex items-start">
+                                <div class="bg-primary/10 p-2 rounded-full mr-4">
+                                    <i class="fa fa-check-circle text-primary"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-bold text-secondary mb-2">Define Clear Learning Outcomes</h3>
+                                    <p class="text-lg leading-relaxed">
+                                        I begin by establishing clear course-level and unit-level learning outcomes (CILOs and LILOs). These outcomes specify what students should know and be able to do upon completion of the course or unit. For example, in GEL2012, I align CILOs with LILOs to ensure that all teaching and assessment activities support the achievement of these goals.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- 原则2 -->
+                        <div class="bg-gray-50 p-5 rounded-xl border-l-4 border-primary">
+                            <div class="flex items-start">
+                                <div class="bg-primary/10 p-2 rounded-full mr-4">
+                                    <i class="fa fa-users text-primary"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-bold text-secondary mb-2">Design Student-Centered Learning Activities</h3>
+                                    <p class="text-lg leading-relaxed">
+                                        Based on the LILOs, I design activities that encourage active participation and collaborative learning. I use real-world scenarios, case studies, and problem-solving tasks to help students apply knowledge in practical contexts. For instance, I incorporate role-playing, research projects, and group discussions to foster critical thinking and knowledge construction.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- 原则3 -->
+                        <div class="bg-gray-50 p-5 rounded-xl border-l-4 border-primary">
+                            <div class="flex items-start">
+                                <div class="bg-primary/10 p-2 rounded-full mr-4">
+                                    <i class="fa fa-clipboard-check text-primary"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-bold text-secondary mb-2">Align Assessments with Learning Outcomes</h3>
+                                    <p class="text-lg leading-relaxed">
+                                        All assessments are carefully aligned with the LILOs and CILOs to ensure they accurately measure the intended learning outcomes. In a course on technology entrepreneurship, I use diverse assessment methods such as project reports, group discussions, and simulations to evaluate students' ability to apply knowledge in real-world situations. This approach not only assesses knowledge but also emphasizes skill development and innovation.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- 原则4 -->
+                        <div class="bg-gray-50 p-5 rounded-xl border-l-4 border-primary">
+                            <div class="flex items-start">
+                                <div class="bg-primary/10 p-2 rounded-full mr-4">
+                                    <i class="fa fa-refresh text-primary"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-bold text-secondary mb-2">Reflect and Improve</h3>
+                                    <p class="text-lg leading-relaxed">
+                                        After each lesson, I reflect on the effectiveness of my teaching strategies, noting what worked well and where improvements can be made. This reflection helps me refine my instructional design to better support student learning and ensure that teaching activities and assessments remain aligned with the desired outcomes.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8 pt-6 border-t border-gray-100">
+                        <p class="text-lg leading-relaxed">
+                            By integrating constructive alignment and outcomes-based principles, I create a structured and effective learning environment that supports students in developing both knowledge and practical skills.
+                        </p>
+                    </div>
+                </div>
             </section>
 
             <!-- 联系信息 -->
-            <section class="mb-12 bg-white rounded-2xl shadow-lg p-6 md:p-8">
-                <h2 class="text-[clamp(1.3rem,2.5vw,1.75rem)] font-bold text-secondary mb-6 border-b border-gray-100 pb-4">
-                    <i class="fa fa-envelope text-primary mr-3"></i>Contact Information
-                </h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div class="flex items-start">
-                        <div class="bg-primary/10 p-3 rounded-full mr-4">
-                            <i class="fa fa-university text-primary"></i>
+            <section class="mb-12">
+                <div class="bg-white rounded-2xl shadow-lg p-6 md:p-8">
+                    <h2 class="text-[clamp(1.3rem,2.5vw,1.75rem)] font-bold text-secondary mb-6 border-b border-gray-100 pb-4">
+                        <i class="fa fa-envelope text-primary mr-3"></i>Contact Information
+                    </h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="flex items-start">
+                            <div class="bg-primary/10 p-3 rounded-full mr-4">
+                                <i class="fa fa-university text-primary"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-gray-800">Affiliation</h3>
+                                <p class="text-gray-600">The Education University of Hong Kong (EdUHK)</p>
+                                <p class="text-gray-600 mt-1">Programme Leader of BSc(AI&EdTech)</p>
+                            </div>
                         </div>
-                        <div>
-                            <h3 class="font-semibold text-gray-800">Affiliation</h3>
-                            <p class="text-gray-600">The Education University of Hong Kong (EdUHK)</p>
+                        <div class="flex items-start">
+                            <div class="bg-primary/10 p-3 rounded-full mr-4">
+                                <i class="fa fa-envelope text-primary"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-gray-800">Email</h3>
+                                <p class="text-gray-600">hyincheung@eduhk.hk</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="flex items-start">
-                        <div class="bg-primary/10 p-3 rounded-full mr-4">
-                            <i class="fa fa-envelope text-primary"></i>
-                        </div>
-                        <div>
-                            <h3 class="font-semibold text-gray-800">Email</h3>
-                            <p class="text-gray-600">hoyin.cheung@eduhk.hk</p>
+                    <div class="mt-6 pt-6 border-t border-gray-100">
+                        <div class="flex items-center">
+                            <div class="bg-primary/10 p-3 rounded-full mr-4">
+                                <i class="fa fa-linkedin text-primary"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-gray-800">LinkedIn</h3>
+                                <p class="text-gray-600">Connect with me on <a href="https://www.linkedin.com/in/haoran/" target="_blank" class="text-primary hover:underline">LinkedIn</a></p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -167,13 +360,15 @@
                     <div>
                         <h3 class="text-xl font-bold mb-4">Dr. Cheung, Ho Yin</h3>
                         <p class="text-gray-300 mb-4">Educational Researcher & Practitioner</p>
-                        <p class="text-gray-400">The Education University of Hong Kong</p>
+                        <p class="text-gray-400">Programme Leader of BSc(AI&EdTech) at The Education University of Hong Kong</p>
                     </div>
                     <div>
                         <h3 class="text-xl font-bold mb-4">Quick Links</h3>
                         <ul class="space-y-2">
-                            <li><a href="index.html" class="text-gray-300 hover:text-white transition-custom">Home</a></li>
-                            <li><a href="TeachingPhilosophy.html" class="text-gray-300 hover:text-white transition-custom">Teaching Philosophy</a></li>
+                            <li><a href="#profile" class="text-gray-300 hover:text-white transition-custom">Professional Profile</a></li>
+                            <li><a href="#philosophy" class="text-gray-300 hover:text-white transition-custom">Teaching Philosophy</a></li>
+                            <li><a href="#pedagogical" class="text-gray-300 hover:text-white transition-custom">Pedagogical Design</a></li>
+                            <li><a href="https://www.linkedin.com/in/haoran/" target="_blank" class="text-gray-300 hover:text-white transition-custom">LinkedIn Profile</a></li>
                         </ul>
                     </div>
                 </div>
@@ -186,7 +381,7 @@
 
     <script>
         // 移动端菜单切换
-        const menuToggle = document.querySelector('.fa-bars').parentElement;
+        const menuToggle = document.getElementById('menu-toggle');
         const mobileMenu = document.getElementById('mobile-menu');
         
         menuToggle.addEventListener('click', () => {
@@ -212,7 +407,51 @@
                 nav.classList.remove('py-2', 'shadow-md');
             }
         });
+
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                // 关闭移动菜单（如果打开）
+                if (!mobileMenu.classList.contains('-translate-y-full')) {
+                    mobileMenu.classList.add('-translate-y-full', 'opacity-0', 'pointer-events-none');
+                    mobileMenu.classList.remove('translate-y-0', 'opacity-100', 'pointer-events-auto');
+                    menuToggle.innerHTML = '<i class="fa fa-bars"></i>';
+                }
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // 高亮当前导航项
+        const highlightNavItems = () => {
+            const scrollPosition = window.scrollY;
+            const navLinks = document.querySelectorAll('nav a');
+            
+            document.querySelectorAll('section').forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                const sectionHeight = section.offsetHeight;
+                const sectionId = section.getAttribute('id');
+                
+                if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                    navLinks.forEach(link => {
+                        link.classList.remove('text-primary');
+                        link.classList.add('text-secondary');
+                        
+                        if (link.getAttribute('href') === `#${sectionId}`) {
+                            link.classList.remove('text-secondary');
+                            link.classList.add('text-primary');
+                        }
+                    });
+                }
+            });
+        };
+        
+        window.addEventListener('scroll', highlightNavItems);
+        highlightNavItems(); // 初始加载时执行一次
     </script>
 </body>
-</html>
-    
+</html>    
