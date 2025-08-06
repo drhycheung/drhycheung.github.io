@@ -14,4 +14,4 @@ This site serves as my digital resume and portfolio, featuring:
 
 ## 🛠️ Built With
 - Hosted on GitHub Pages
-- HTML generated and beautified with [Doubao](https://doubao.com)
+- HTML generated and beautified with [Trae IDE](https://trae.ai)
